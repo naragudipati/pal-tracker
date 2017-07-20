@@ -10,6 +10,7 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 configurations {
@@ -17,3 +18,15 @@ configurations {
         exclude group: 'org.hibernate', module: 'hibernate.validator'
     }
 }
+
+bootRun.environment([
+        "WELCOME_MESSAGE": "hello",
+        "PORT": "8080",
+        "MEMORY_LIMIT": "1G",
+        "CF_INSTANCE_INDEX": "34",
+        "CF_INSTANCE_ADDR": "123.sesame.stree"
+])
+
+test.environment([
+        "WELCOME_MESSAGE": "Hello from test",
+])
