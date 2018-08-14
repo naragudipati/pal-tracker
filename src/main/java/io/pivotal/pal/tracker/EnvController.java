@@ -32,6 +32,9 @@ public class EnvController {
         envMap.put("MEMORY_LIMIT", memoryLimit);
         envMap.put("CF_INSTANCE_INDEX", cfInstanceIndex);
         envMap.put("CF_INSTANCE_ADDR", cfInstanceAddress);
+        System.out.println("Hi");
         return envMap;
+
+
     }
 }
